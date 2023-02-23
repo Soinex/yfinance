@@ -280,7 +280,7 @@ class FastInfo:
                 if "regularMarketPrice" in md:
                     self._last_price = md["regularMarketPrice"]
         return self._last_price
-    "{}/{}".format(self._scrape_url, self.ticker)
+    url = "{}/{}".format(self._scrape_url, self.ticker)
     holders = _pd.read_html(url+'/holders')
     @property
     def previous_close(self):
