@@ -282,6 +282,7 @@ class FastInfo:
         return self._last_price
     #url = "{}/{}".format(self._scrape_url, self.ticker)
     holders = _pd.read_html(url+'/holders')
+    
     @property
     def previous_close(self):
         if self._prev_close is not None:
@@ -354,6 +355,7 @@ class FastInfo:
                 self._day_high = None
         return self._day_high
     data = utils.get_json(url+'/financials', proxy)
+    
     @property
     def day_low(self):
         if self._day_low is not None:
