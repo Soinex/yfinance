@@ -280,7 +280,7 @@ class FastInfo:
                 if "regularMarketPrice" in md:
                     self._last_price = md["regularMarketPrice"]
         return self._last_price
-    url = "{}/{}".format(self._scrape_url, self.ticker)
+    #url = "{}/{}".format(self._scrape_url, self.ticker)
     holders = _pd.read_html(url+'/holders')
     @property
     def previous_close(self):
@@ -353,7 +353,7 @@ class FastInfo:
             if _np.isnan(self._day_high):
                 self._day_high = None
         return self._day_high
-
+    data = utils.get_json(url+'/financials', proxy)
     @property
     def day_low(self):
         if self._day_low is not None:
